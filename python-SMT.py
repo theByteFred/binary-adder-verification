@@ -26,12 +26,3 @@ solver.add(A+B != S)
 print("test1: complement:",solver.check())
 assert(solver.check() == z3.unsat)
 print("verified!")
-
-# validity can also be checked using universal quantifier 
-# from a logical point, this check is equivalent to the one above
-# however, this code gives an illustration of universal quantifiers
-solver = z3.Solver()
-solver.add(z3.ForAll([a0,a1,b0,b1],A+B == S)) 
-print("test2: universal-quantified formula:",solver.check())
-assert(solver.check() == z3.sat)
-print("verified!")
